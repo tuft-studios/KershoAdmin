@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/adminControl"
+        android:title="Admin Control"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/kitchenControl"
+                android:title="Kitchen Control" />
+
+            <item
+                android:id="@+id/promocodes"
+                android:title="Promocodes" />
+
+            <item
+                android:id="@+id/complains"
+                android:title="Complains" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title="Search"
+        app:showAsAction="ifRoom |collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+
+</menu>

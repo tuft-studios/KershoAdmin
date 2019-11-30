@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1076131113559",
+    "firebase_url": "https://kersho-admin.firebaseio.com",
+    "project_id": "kersho-admin",
+    "storage_bucket": "kersho-admin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076131113559:android:9abb3c2d4933fdc62b1112",
+        "android_client_info": {
+          "package_name": "com.tuftstudios.kershoadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076131113559-mjmgg99ickj8ti9kt59sojdnhflvqf2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoETSPNzT0PEZUKUE3bYR7zmaf9ebnSXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076131113559-mjmgg99ickj8ti9kt59sojdnhflvqf2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
