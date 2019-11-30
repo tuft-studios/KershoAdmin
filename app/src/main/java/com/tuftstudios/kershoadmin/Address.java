@@ -63,3 +63,4 @@ public class Address implements Serializable {
         return longitude;
     }
 }
+
