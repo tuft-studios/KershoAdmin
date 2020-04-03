@@ -7,16 +7,11 @@ public class Dish implements Serializable {
     private int dId, priceM, priceL, costM, costL, eta, size, quantity, cartCount, likes;
     private String imageUrl, dishName, dishDisc, dishNameArabic, dishDiscArabic, location,
             options, sides1, sides2, selectedOption, selectedSide1, selectedSide2, selectedSize,
-            option, side1, side2, dishSize, kitchen;
+            option, side1, side2;
     private boolean isFav;
 
-    public String getDishSize() {
-        return dishSize;
-    }
+    private String dishSize;
 
-    public String getKitchen() {
-        return kitchen;
-    }
 
     public String getSelectedOption() {
         return selectedOption;
@@ -137,7 +132,8 @@ public class Dish implements Serializable {
         this.quantity = quantity;
     }
 
-    public Dish(int dId, int size, int priceM, int priceL, int costM, int eta, int likes, int cartCount, String imageUrl, String dishName, String dishDisc, String location, boolean isFav) {
+    public Dish(int dId, int size, int priceM, int priceL, int costM, int eta, int likes,
+                int cartCount, String imageUrl, String dishName, String dishDisc, String location, boolean isFav) {
         this.dId = dId;
         this.size = size;
         this.priceM = priceM;

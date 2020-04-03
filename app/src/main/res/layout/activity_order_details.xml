@@ -8,9 +8,18 @@
     tools:context=".OrderDetailsActivity">
 
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ly3"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
@@ -34,7 +43,7 @@
 
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/tv_order_id_sum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -84,7 +93,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
+ <!--   <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -93,11 +102,15 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_total_sum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ly3">
+        app:layout_constraintTop_toBottomOf="@+id/ly3">-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tv_total_sum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ly3">
 
 
             <TextView
@@ -258,15 +271,35 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/textViewCttv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Ordered at"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/order_tracker_layout" />
+
+            <TextView
+                android:id="@+id/tv_creation_time_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                android:gravity="end"
+                android:text="To be delivered in"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCttv" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginTop="12dp"
-                android:text="Deliver in"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="Deliver at"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/order_tracker_layout" />
 
             <TextView
@@ -296,9 +329,9 @@
                 android:id="@+id/tv_address_sum"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="12dp"
                 android:gravity="end"
                 android:text="To be delivered in"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -473,22 +506,25 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+    <!--</ScrollView>-->
 
 
 
-    <TextView
+        <TextView
         android:id="@+id/tv_total_sum"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
         android:gravity="center"
+            android:layout_marginTop="8dp"
         android:background="#00C853"
         android:textSize="18sp"
         android:textColor="@color/white"
         android:layout_centerInParent="true"
         android:text="TOTAL EGP 185"/>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+</ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,12 +38,13 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishesView
         Dish dish = dishesList.get(position);
 
         dishesViewHolder.textViewDishName.setText(dish.getDishName());
-
-
-        dishesViewHolder.textViewKitchen.setText(dish.getKitchen());
+        dishesViewHolder.textViewSOption.setText("Option: " + dish.getSelectedOption());
+        dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSelectedSide1());
+        dishesViewHolder.textViewSSide2.setText("Side 2: " + dish.getSelectedSide2());
+        dishesViewHolder.textViewSSize.setText("Size: " + dish.getSelectedSize());
         int count = order.getDishesList().get(position).getQuantity();
 
-        dishesViewHolder.count.setText("X" + count);
+        dishesViewHolder.count.setText("x" + count);
         //dishesViewHolder.textViewKitchen.setText(String.valueOf(dish.getKitchen()));
 
     }
@@ -56,7 +57,7 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishesView
 
     public class DishesViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView textViewDishName;
+        public TextView textViewDishName, textViewSOption, textViewSSide1, textViewSSide2, textViewSSize;
         public TextView count;
         public TextView textViewKitchen;
         public CardView cardView;
@@ -65,6 +66,10 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishesView
             super(itemView);
 
             textViewDishName = itemView.findViewById(R.id.textViewDishName);
+            textViewSOption = itemView.findViewById(R.id.textViewSOption);
+            textViewSSide1 = itemView.findViewById(R.id.textViewSSide1);
+            textViewSSide2 = itemView.findViewById(R.id.textViewSSide2);
+            textViewSSize = itemView.findViewById(R.id.textViewSSize);
             count = itemView.findViewById(R.id.count_sam);
             textViewKitchen = itemView.findViewById(R.id.textViewKitchen);
 

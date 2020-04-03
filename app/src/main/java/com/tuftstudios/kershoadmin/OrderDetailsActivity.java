@@ -34,9 +34,10 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
     private RecyclerView recyclerView;
     private List<Dish> dishesList;
     private DishesAdapter dishesAdapter;
+
     Order order;
 
-    TextView timeTv, addressTv, mobileTv, subTotalTv, deliveryFeesTv, totalTx, canceledTv, discountTv;
+    TextView orderIdTv, creationTimeTv, timeTv, addressTv, mobileTv, subTotalTv, deliveryFeesTv, totalTx, canceledTv, discountTv;
 
     ImageView submittedImage, receivedImage, readyImage, deliveredImage, backToMain, cancelBtn, promoBtn;
 
@@ -132,6 +133,8 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
 
     private void initiateViews() {
         // National ID, Password input text
+        orderIdTv = findViewById(R.id.tv_order_id_sum);
+        creationTimeTv = findViewById(R.id.tv_creation_time_sum);
         timeTv = findViewById(R.id.tv_delivery_time_sum);
         addressTv = findViewById(R.id.tv_address_sum);
         addressTv.setOnClickListener(this);
@@ -186,7 +189,8 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
 
     private void setOrderData() {
 
-
+        orderIdTv.setText("Order " + String.valueOf(order.getId()));
+        creationTimeTv.setText(order.getCreationTime());
         timeTv.setText(order.getOrderTime());
 
         if (userType != 1) {

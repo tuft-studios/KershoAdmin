@@ -14,7 +14,7 @@ public class Order implements Serializable {
 
     private int orderId, userId, addressId, status, eta;
     private double subtotal, delivery, total, discount;
-    private String location, schedule, orderTime, creationTime, phone, fullAddress, addressName, kitchens,
+    private String location, schedule, orderTime, creationTime, phone, fullAddress, addressName,
             dishes, count, options, sizes, sides1, sides2, comment, area, street, landMark, floor, apartmentNumber, buildingNumber;
     private float latitude, longitude;
 
@@ -218,10 +218,6 @@ public class Order implements Serializable {
 
     public float getLongitude() {
         return longitude;
-    }
-
-    public String getKitchens() {
-        return kitchens;
     }
 }
 
