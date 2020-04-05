@@ -141,7 +141,7 @@ public class Order implements Serializable {
         return phone;
     }
 
-    public ArrayList<Dish> getDishesList() {
+    public ArrayList<Dish> getDishesList() {1
         return dishesList;
     }
 
