@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.CarFlix.Title"
+        android:textAppearance="@style/TextAppearance.Title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -24,7 +24,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_layout"
-        style="@style/Widget.CarFlix.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,7 +50,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_layout"
-        style="@style/Widget.CarFlix.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

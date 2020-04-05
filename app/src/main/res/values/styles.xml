@@ -20,25 +20,19 @@
 
 
 
-    <style name="TextAppearance.CarFlix.Title" parent="TextAppearance.MaterialComponents.Headline4">
+    <style name="TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
 
-    <style name="Widget.CarFlix.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="hintTextAppearance">@style/TextAppearance.CarFlix.TextInputLayout.HintText</item>
+    <style name="Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/textInputOutlineColor</item>
     </style>
 
-    <style name="TextAppearance.CarFlix.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
-    </style>
-
-
-    <style name="Widget.CarFlix.Button" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="backgroundTint">?attr/colorPrimaryDark</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
@@ -46,7 +40,7 @@
         </item>
     </style>
 
-    <style name="Widget.CarFlix.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="Widget.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
