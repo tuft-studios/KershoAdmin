@@ -7,11 +7,17 @@ public class Dish implements Serializable {
     private int dId, priceM, priceL, costM, costL, eta, size, quantity, cartCount, likes;
     private String imageUrl, dishName, dishDisc, dishNameArabic, dishDiscArabic, location,
             options, sides1, sides2, selectedOption, selectedSide1, selectedSide2, selectedSize,
-            option, side1, side2;
+            option, side1, side2, dishSize, kitchen;
     private boolean isFav;
 
-    private String dishSize;
 
+    public String getDishSize() {
+        return dishSize;
+    }
+
+    public String getKitchen() {
+        return kitchen;
+    }
 
     public String getSelectedOption() {
         return selectedOption;
