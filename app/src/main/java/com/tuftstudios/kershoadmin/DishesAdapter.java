@@ -37,17 +37,63 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishesView
 
         Dish dish = dishesList.get(position);
 
-        dishesViewHolder.textViewDishName.setText(dish.getDishName());
-        dishesViewHolder.textViewSOption.setText("Option: " + dish.getSelectedOption());
-        dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSelectedSide1());
-        dishesViewHolder.textViewSSide2.setText("Side 2: " + dish.getSelectedSide2());
-        dishesViewHolder.textViewSSize.setText("Size: " + dish.getSelectedSize());
-        int count = order.getDishesList().get(position).getQuantity();
+        int userType = SharedPrefManager.getInstance(mContext).getSavedUser().getType();
+        String userKitchen = SharedPrefManager.getInstance(mContext).getSavedUser().getUsername();
 
-        dishesViewHolder.count.setText("x" + count);
-        //dishesViewHolder.textViewKitchen.setText(String.valueOf(dish.getKitchen()));
+        if (userType == 0 || userType == 2) {
+            dishesViewHolder.textViewDishName.setText(dish.getDishName());
+            if (dish.getSide1().equals("none")) {
+                dishesViewHolder.textViewSSide1.setVisibility(View.GONE);
+            }else{
+                dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSide1());
+            }
+            if (dish.getSide2().equals("none")) {
+                dishesViewHolder.textViewSSide2.setVisibility(View.GONE);
+            }else {
+                dishesViewHolder.textViewSSide2.setText("Side 1: " + dish.getSide2());
+            }
+            if (dish.getOption().equals("none")) {
+                dishesViewHolder.textViewSOption.setVisibility(View.GONE);
+            }else{
+                dishesViewHolder.textViewSOption.setText("Option: " + dish.getOption());
+            }
+            dishesViewHolder.textViewSSize.setText("Size: " + dish.getSize());
+            dishesViewHolder.textViewKitchen.setText("Kitchen: " + dish.getKitchen());
+            dishesViewHolder.count.setText(toString().valueOf("Quantity: " + dish.getQuantity()));
 
+        } else if (userType == 1 && dish.getKitchen().equals(userKitchen)){
+            dishesViewHolder.textViewDishName.setText(dish.getDishName());
+            if (dish.getSide1().equals("none")) {
+                dishesViewHolder.textViewSSide1.setVisibility(View.GONE);
+            }else{
+                dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSide1());
+            }
+            if (dish.getSide2().equals("none")) {
+                dishesViewHolder.textViewSSide2.setVisibility(View.GONE);
+            }else {
+                dishesViewHolder.textViewSSide2.setText("Side 1: " + dish.getSide2());
+            }
+            if (dish.getOption().equals("none")) {
+                dishesViewHolder.textViewSOption.setVisibility(View.GONE);
+            }else{
+                dishesViewHolder.textViewSOption.setText("Option: " + dish.getOption());
+            }
+            dishesViewHolder.textViewSSize.setText("Size: " + dish.getSize());
+            dishesViewHolder.count.setText(toString().valueOf("Quantity: " + dish.getQuantity()));
+        }
     }
+
+/*
+        dishesViewHolder.textViewDishName.setText(dish.getDishName());
+        dishesViewHolder.textViewSOption.setText("Option: " + dish.getOption());
+        dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSide1());
+        dishesViewHolder.textViewSSide2.setText("Side 2: " + dish.getSide2());
+        dishesViewHolder.textViewSSize.setText("Size: " + dish.getSize());
+        dishesViewHolder.textViewKitchen.setText("Kitchen: " + dish.getKitchen());
+        dishesViewHolder.count.setText(toString().valueOf(dish.getQuantity()));
+*/
+
+
 
     @Override
     public int getItemCount() {

@@ -37,7 +37,8 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
 
     Order order;
 
-    TextView orderIdTv, creationTimeTv, timeTv, addressTv, mobileTv, subTotalTv, deliveryFeesTv, totalTx, canceledTv, discountTv;
+    TextView orderIdTv, creationTimeTv, timeTv, addressTv, mobileTv, subTotalTv, deliveryFeesTv,
+            totalTx, canceledTv, discountTv;
 
     ImageView submittedImage, receivedImage, readyImage, deliveredImage, backToMain, cancelBtn, promoBtn;
 
@@ -133,6 +134,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
 
     private void initiateViews() {
         // National ID, Password input text
+//        side1Tv = findViewById(R.id.textViewSSide1);
         orderIdTv = findViewById(R.id.tv_order_id_sum);
         creationTimeTv = findViewById(R.id.tv_creation_time_sum);
         timeTv = findViewById(R.id.tv_delivery_time_sum);
@@ -192,6 +194,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
         orderIdTv.setText("Order " + String.valueOf(order.getId()));
         creationTimeTv.setText(order.getCreationTime());
         timeTv.setText(order.getOrderTime());
+//        side1Tv.setText(order.getSides1());
 
         if (userType != 1) {
             addressTv.setText(order.getFullAddress());

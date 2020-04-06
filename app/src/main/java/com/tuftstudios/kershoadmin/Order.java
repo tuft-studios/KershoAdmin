@@ -20,7 +20,8 @@ public class Order implements Serializable {
 
     public Order(int orderId, ArrayList<Dish> dishesList, int status, double subtotal, double delivery, double total, double discount,
                  String phone, String orderTime, String creationTime, String fullAddress, String addressName,
-                 String comment, int eta, String area, String street, String landMark, String floor, String apartmentNumber, String buildingNumber, float latitude, float longitude) {
+                 String comment, int eta, String area, String street, String landMark, String floor,
+                 String apartmentNumber, String buildingNumber, float latitude, float longitude) {
         this.dishesList = dishesList;
         this.orderId = orderId;
         this.status = status;
