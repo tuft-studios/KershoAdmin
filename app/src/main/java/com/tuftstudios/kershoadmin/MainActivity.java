@@ -413,9 +413,11 @@ public class MainActivity extends AppCompatActivity {
                     }else if (password.length() < 6){
                         passwordEditText.setError("Password is less that 6 characters");
                         passwordEditText.requestFocus();
+                    }else{
+                        updatePassword(userIndex[0], password);
                     }
 
-                    updatePassword(userIndex[0], password);
+//                    updatePassword(userIndex[0], password);
 
 
                 }else if (changeStatus.isChecked()){
