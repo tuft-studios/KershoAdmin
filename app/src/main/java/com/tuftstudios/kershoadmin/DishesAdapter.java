@@ -37,50 +37,39 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishesView
 
         Dish dish = dishesList.get(position);
 
-        int userType = SharedPrefManager.getInstance(mContext).getSavedUser().getType();
-        String userKitchen = SharedPrefManager.getInstance(mContext).getSavedUser().getUsername();
+        //int userType = SharedPrefManager.getInstance(mContext).getSavedUser().getType();
+        //String userKitchen = SharedPrefManager.getInstance(mContext).getSavedUser().getUsername();
 
-        if (userType == 0 || userType == 2) {
-            dishesViewHolder.textViewDishName.setText(dish.getDishName());
-            if (dish.getSide1().equals("none")) {
-                dishesViewHolder.textViewSSide1.setVisibility(View.GONE);
-            }else{
-                dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSide1());
-            }
-            if (dish.getSide2().equals("none")) {
-                dishesViewHolder.textViewSSide2.setVisibility(View.GONE);
-            }else {
-                dishesViewHolder.textViewSSide2.setText("Side 1: " + dish.getSide2());
-            }
-            if (dish.getOption().equals("none")) {
-                dishesViewHolder.textViewSOption.setVisibility(View.GONE);
-            }else{
-                dishesViewHolder.textViewSOption.setText("Option: " + dish.getOption());
-            }
-            dishesViewHolder.textViewSSize.setText("Size: " + dish.getSize());
-            dishesViewHolder.textViewKitchen.setText("Kitchen: " + dish.getKitchen());
-            dishesViewHolder.count.setText(toString().valueOf("Quantity: " + dish.getQuantity()));
+        dishesViewHolder.textViewDishName.setText(dish.getDishName());
 
-        } else if (userType == 1 && dish.getKitchen().equals(userKitchen)){
-            dishesViewHolder.textViewDishName.setText(dish.getDishName());
-            if (dish.getSide1().equals("none")) {
-                dishesViewHolder.textViewSSide1.setVisibility(View.GONE);
-            }else{
-                dishesViewHolder.textViewSSide1.setText("Side 1: " + dish.getSide1());
-            }
-            if (dish.getSide2().equals("none")) {
-                dishesViewHolder.textViewSSide2.setVisibility(View.GONE);
-            }else {
-                dishesViewHolder.textViewSSide2.setText("Side 1: " + dish.getSide2());
-            }
-            if (dish.getOption().equals("none")) {
-                dishesViewHolder.textViewSOption.setVisibility(View.GONE);
-            }else{
-                dishesViewHolder.textViewSOption.setText("Option: " + dish.getOption());
-            }
-            dishesViewHolder.textViewSSize.setText("Size: " + dish.getSize());
-            dishesViewHolder.count.setText(toString().valueOf("Quantity: " + dish.getQuantity()));
+        if (dish.getSide1().equals("none")) {
+            dishesViewHolder.textViewSSide1.setVisibility(View.GONE);
+        }else{
+            String side1 = "Side 1: " + dish.getSide1();
+            dishesViewHolder.textViewSSide1.setText(side1);
         }
+        if (dish.getSide2().equals("none")) {
+            dishesViewHolder.textViewSSide2.setVisibility(View.GONE);
+        }else {
+            String side2 = "Side 1: " + dish.getSide2();
+            dishesViewHolder.textViewSSide2.setText(side2);
+        }
+        if (dish.getOption().equals("none")) {
+            dishesViewHolder.textViewSOption.setVisibility(View.GONE);
+        }else{
+            String option = "Option: " + dish.getOption();
+            dishesViewHolder.textViewSOption.setText(option);
+        }
+
+        String size = "Size: " + dish.getDishSize();
+        String kitchen = "Kitchen: " + dish.getKitchen();
+        String quantity = "Quantity: " + dish.getQuantity();
+        dishesViewHolder.textViewSSize.setText(size);
+        dishesViewHolder.textViewKitchen.setText(kitchen);
+        dishesViewHolder.count.setText(quantity);
+
+
+
     }
 
 /*
